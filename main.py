@@ -1,14 +1,20 @@
-#Exercise 2
-import math
-
-def area(a):
-    if (math.sqrt(3)/4) * (a ** 2) > 1000:
-        #print(f"{(math.sqrt(3)/4) * (a ** 2):.2f}")  # Para verificar si en efecto el area es mayor a 1000
-        print("DATOS NO VÁLIDOS")
+#Exercise 3
+def average(numbers):
+    if len(numbers) == 0:
+        return 0
     else:
-        #print(f"El area de ese triángulo es de: {(math.sqrt(3)/4) * (a ** 2):.2f}")  # No piden imprimir el área pero por si a caso...
-        return ((math.sqrt(3)/4) * (a ** 2))
+        return sum(numbers) / len(numbers)
+
+def volt():
+    Volt = float(input("Insert the Voltage: "))
+    return Volt
 
 # Main
-A = float(input("Inserte la longitud del lado del triángulo: "))
-Area = area(A)
+numbers = [volt(), volt(), volt()]
+
+if average(numbers) >= 220:      #Enunciado no especificaba menor/mayor ó IGUAL, así que así lo dejo...
+    print(f"PELIGRO")
+elif average(numbers) <= 115:
+    print(f"VOLTAJE CORRECTO")
+else:
+    print(f"ALTO VOLTAJE")
